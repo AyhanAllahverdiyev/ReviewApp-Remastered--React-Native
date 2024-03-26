@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, Button,Image ,StyleSheet} from 'react-native';
+import { View, Text, Button,Image ,StyleSheet,ImageBackground} from 'react-native';
 import { globalStyles,imgaes } from '../styles/global';
 import Card from '../shared/card';
  const ReviewDetails = ({route,navigation}) => {
     const {title,body,rating,key} = route.params;
      return (
+        <ImageBackground source={require('../assets/game_bg.png')} style={styles.imageBackground}>
+         
         <View style={globalStyles.container}>
             <Card> 
             <Text style={globalStyles.titleText}>{ title }</Text>
@@ -16,7 +18,9 @@ import Card from '../shared/card';
              <Button title='Back to Home' onPress={() => navigation.goBack()} />
             </Card>
         
+   
       </View>
+      </ImageBackground>    
        
     );
 }
@@ -25,10 +29,16 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         paddingTop:16,
-        marginTop:16,
+        marginHorizontal:16,
+        
         borderTopWidth:1,
         borderTopColor:'#eee'
-    }
+    },
+    imageBackground: {
+        flex: 1,
+        resizeMode: 'cover',
+       },
+     
     
 })
 export default ReviewDetails;

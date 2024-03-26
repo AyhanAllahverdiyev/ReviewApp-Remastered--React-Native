@@ -1,17 +1,24 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,ImageBackground } from "react-native";
  import { MaterialIcons } from "@expo/vector-icons";
+import { Image } from "react-native";
+
+
 
  export default function Header(){
     return (
-        <View styles={styles.header}>
-
-            <View>
+        
+        <ImageBackground  styles={styles.header } source={require('../assets/game_bg.png')}>
+            <View style={styles.headerTitle}>
+                <Image style= {styles.headerImage} source={require('../assets/heart_logo.png')}/>
                 <Text style={styles.headerText}>Home</Text>
             </View>
-        </View>
+        </ImageBackground>
     )
  }
+
+
+
 
  const styles=StyleSheet.create({
     header:{
@@ -28,4 +35,12 @@ import { View, Text, StyleSheet } from "react-native";
         color:'#333',
         letterSpacing:1,
     },
+    headerImage:{
+        width:26,
+        height:26,
+        marginHorizontal:10,
+    },
+    headerTitle:{
+        flexDirection:'row',
+    }
  })
