@@ -16,13 +16,22 @@ export const globalStyles = StyleSheet.create({
   },
   input:{
     borderWidth:1,
-    borderColor:'#ddd',
+    borderColor:'gray',
     padding:10,
     fontSize:18,
     borderRadius:6,
-    marginVertical:10,
+ 
   
-  }
+  },
+
+  errorText: {
+    color:'crimson',
+    fontWeight:'bold',
+    marginBottom:10,
+    marginTop:6,
+    textAlign:'center'
+  },
+ 
 });
 
 export const imgaes={

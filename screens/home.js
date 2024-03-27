@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { View, Text, TouchableOpacity, FlatList, ImageBackground, StyleSheet ,Modal,SafeAreaView,Keyboard,TouchableWithoutFeedback} from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
@@ -13,7 +13,6 @@ export default function Home({ navigation }) {
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
   ]);
 
-
   const addReview= (review)=>{
     review.key=Math.random().toString(); 
     setReviews((currentReviews)=>{
@@ -27,20 +26,21 @@ export default function Home({ navigation }) {
         <View style={styles.content}>
           
           <Modal visible={modalOpen} animationType='slide'> 
-              <View style={{height:60}}></View>
+              <View style={{height:50}}></View>
               <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <View style={styles.modalContent}> 
+              
               <MaterialIcons 
                 style={{...styles.modalToggle,...styles.modalClose }}
                   name ="close" 
                   size={24} 
                   onPress={()=>setModelOpen(false)}
-                />
+                />          
+                  <View style={{height:20}}></View>
                   <ReviewForm addReview={addReview}/>
-                </View>
+                </View>       
               </TouchableWithoutFeedback>
-           </Modal>
-           
+           </Modal>       
           <MaterialIcons 
        
           style={styles.modalToggle}
