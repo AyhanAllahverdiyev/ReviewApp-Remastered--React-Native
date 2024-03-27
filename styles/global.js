@@ -34,7 +34,7 @@ export const globalStyles = StyleSheet.create({
  
 });
 
-export const imgaes={
+export const images={
   ratings:{
     '1': require('../assets/rating-1.png'),
     '2': require('../assets/rating-2.png'),

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button,Image ,StyleSheet,ImageBackground} from 'react-native';
-import { globalStyles,imgaes } from '../styles/global';
+import { globalStyles,images } from '../styles/global';
 import Card from '../shared/card';
  const ReviewDetails = ({route,navigation}) => {
     const {title,body,rating,key} = route.params;
@@ -13,7 +13,7 @@ import Card from '../shared/card';
             <Text style={globalStyles.titleText}>{ body }</Text>
             <View style={styles.rating} >
                   <Text>GameZone rating:</Text>
-                  <Image source={(imgaes.ratings[rating])}/>
+                  <Image source={(images.ratings[rating])}/>
             </View>
              <Button title='Back to Home' onPress={() => navigation.goBack()} />
             </Card>
